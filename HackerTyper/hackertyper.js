@@ -1,52 +1,46 @@
 
-// let typer = document.getElementById('typefield');
-
-// var fr = new FileReader();
-// let file = 'C:\fakepath\merge_sort.txt';
-
-// const upload = document.getElementById('file');
-
-// upload.addEventListener('change',()=>{
-//     // console.log(input.files);
-//     let reader = new FileReader();
-
-//     reader.readAsText(upload.files[0]);
-
-//     reader.onload = function(){
-//         //console.log(reader.result);
-//         console.log(reader.result);
-
-//     }
-// });
-
-
-// fr.onload = function(){
-//     typer.textContent = fr.result;
-// }
-
-// document.addEventListener('keydown',(e)=>{
-//     console.log(e.key);
-// });
-
 var lines = "";
 let input = document.querySelector('input[type="file"]');
 let typer = document.getElementById('typefield');
+let cursor = document.getElementById('cursor'); //this element gets changed when the span gets rewritten 
 
-input.addEventListener('change',(e=>{
-    const reader = new FileReader();
+let blinkOnOff = 1;
 
-    reader.readAsText(input.files[0]);
 
-    reader.onload = function() {
-        lines = reader.result;
+//fetching the file from directory
+fetch('./merge_sort.txt')
+.then(function(response){return response.text()})
+.then(function(data){
+        console.log(data);
+        lines = data;});
+
+//blinker for the cursor
+const blinker = setInterval(function(){
+    if(blinkOnOff){
+        cursor.style.color = "black";
+        blinkOnOff = 0;
     }
-}));
+    else{
+        cursor.style.color = "inherit";
+        blinkOnOff = 1;
+    }
+    
+},500);
+
 
 let i = 0;
+let typestring = '';
+
 document.addEventListener('keydown',(e)=>{
-    if(!lines == ""){
-        typer.innerText += lines[i++];
-        typer.innerText += lines[i++];
-        typer.innerText += lines[i++];
+    if(!lines == "" && i<=length(lines)){
+        typestring = typer.innerText;
+        typestring = typestring.substr(0,typestring.length - 1);
+        typestring += lines.substr(i,3);
+        console.log(typestring);
+        typer.innerText = typestring;
+        i = i + 3;
+        typer.innerHTML += "<span id=\"cursor\">|</span>"
+        cursor = document.getElementById('cursor');
     }
 });
+
