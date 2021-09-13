@@ -1,0 +1,12 @@
+body{
+    min-height: 97vh;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#red{
+    color: rgb(187, 16, 16);
+    font-weight: 700;
+}

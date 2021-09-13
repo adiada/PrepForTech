@@ -1,0 +1,54 @@
+body{
+    /* min-height: 100vh; */
+    display: flex;
+    flex-wrap: wrap;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    /* position: relative; */
+    align-items: center;
+    justify-content: center;
+    /* text-align: center; */
+}
+
+.reset{
+    flex: 1 0 100%;
+    text-align: right;
+}
+
+
+
+.counter{
+    padding-top: 250px;
+    flex: 1 0 100%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap:20px;
+}
+
+.break{
+    flex-basis: 100%;
+}
+
+#val{
+    font-size: 34px;
+}
+
+button{
+    background-color: white;
+}
+
+button#plus, button#minus {
+    font-size: 30px;
+    height: 70px;
+    width: 40px;
+    border-radius: 8px;
+}
+
+button#reset-button {
+    font-size: 20px;
+    height: 40px;
+    /* width: 100px; */
+    border-radius: 8px;
+}
