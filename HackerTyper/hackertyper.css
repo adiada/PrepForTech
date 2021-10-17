@@ -1,3 +1,13 @@
+body,html{  
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+
 body{
     font-family: 'Courier New', Courier, monospace;
     background-color: black ;
@@ -11,16 +21,64 @@ p{
     transition: color 1s;
 }
 
+
+
 .access{
+    height: 100vh;  
+    width: 100vw;
+    position: fixed;
+    /* top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
     color: rgb(31, 209, 31);
     z-index: 1;
     opacity: 0;
+    /* padding: 50px; */
+    background-color: rgb(31, 209, 31,0.3);
+    transition: font-weight 1s ease, border 1s ease;
+}
+
+.subaccess{
     padding: 50px;
-    border: 2px solid rgb(31, 209, 31);
-    background-color: rgb(31, 209, 31,0.2);
+    /* transform: translate(-50%,-50%); */
+    text-align: center;
+    border: 5px solid rgb(31, 209, 31);
     position: fixed;
     top:50%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    transition: font-weight 1s, border 1s;
 }
+
+#options{
+    border-top: 1px solid rgb(31, 209, 31);
+    height: 50px;
+    width: 100%;
+    /* z-index: -1; */
+    position: absolute;
+    bottom: 0px;
+    /* bottom:0px; */
+}
+
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* reset */
+
+/* .subaccess.open {
+    animation: open 0.5s forwards;
+}
+
+@keyframes open{
+
+    0%{
+        transform: translate(-50%,-50%) scale(0);
+    }
+    50%{
+        transform: translate(-50%,-50%) scale(1.2);
+    }
+
+} */

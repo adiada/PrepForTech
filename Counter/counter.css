@@ -1,48 +1,4 @@
 body{
-<<<<<<< HEAD
-    font-family: sans-serif;
-    font-size: 20px;
-    
-    height: 100vh;
-    width: 100vw;
-}
-
-/* *{
-    outline: 1px solid #000000 !important;
-} */
-
-.counter{
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    float: left;
-    width:400px;
-}
-
-.button{
-    float: left;
-    font-size: 60px;
-    font-weight: 200;
-    text-align: center;
-    width:50px;
-    border-radius: 40%;
-}
-
-.counter p{
-    width: 50px;
-}
-
-.button-reset{
-    text-align: center;
-    width:50px;
-    border-radius: 40%;
-
-}
-
-=======
     /* min-height: 100vh; */
     display: flex;
     flex-wrap: wrap;
@@ -96,4 +52,3 @@ button#reset-button {
     /* width: 100px; */
     border-radius: 8px;
 }
->>>>>>> 0b7a705076276fbe43283669c020257b1a3d4fa2

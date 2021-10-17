@@ -1,9 +1,9 @@
 
 var lines = "";
 let input = document.querySelector('input[type="file"]');
-let typer = document.getElementById('typefield');
+let typer = document.getElementById('text');
 let cursor = document.getElementById('cursor'); //this element gets changed when the span gets rewritten 
-let access = document.querySelector('div[class="access"]');
+let access = document.querySelector('div[class="access center"]');
 
 let blinkOnOff = 1;
 let accBlinkerOnOff = 0;
@@ -13,7 +13,7 @@ fetch('./merge_sort.txt')
 .then(function(response){return response.text()})
 .then(function(data){
         console.log(data);
-        lines = data;});
+        lines = data;}); //returning some fn printtext, call printtext 
 
 //blinker for the cursor
 const blinker = setInterval(function(){
@@ -36,18 +36,20 @@ let onlyOnce = 1;
 document.addEventListener('keydown',(e)=>{
     if(!lines == "" && i<= lines.length){
         typestring = typer.innerText;
-        typestring = typestring.substr(0,typestring.length - 1);
-        typestring += lines.substr(i,3);
+        // typestring = typestring.substr(0,typestring.length - 1);
+        typestring += lines.substr(i,10);
         console.log(typestring);
         typer.innerText = typestring;
-        i = i + 3;
-        typer.innerHTML += "<span id=\"cursor\">|</span>"
+        i = i + 10;
+        // typer.innerHTML += "<span id=\"cursor\">|</span>"
+
         cursor = document.getElementById('cursor');
     }
     else{
         if(e.code == "Enter" && onlyOnce ){
             onlyOnce = 0;
             access.style.opacity = "1";
+            access.style.transition = "opacity 1s";
             const accblink = setInterval(function(){
                 if(accBlinkerOnOff){
                     access.style.fontWeight = 200;
